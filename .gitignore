@@ -1,5 +1,6 @@
 .vs/
-Debug/
+Debug/Sokoban.ilk
+Debug/Sokoban.pdb
 Sokoban.sln
 Sokoban/Debug
 Sokoban/Sokoban.vcxproj
