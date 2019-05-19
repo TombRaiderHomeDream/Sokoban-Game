@@ -6,5 +6,5 @@ void WindowPosition()
 	HWND hwnd;
 	GetConsoleTitle(title, 100);
 	hwnd = FindWindow(NULL, title);
-	MoveWindow(hwnd, 0, 0, 360, 300, TRUE);
+	MoveWindow(hwnd, 0, 0, 0, 0, TRUE);
 }

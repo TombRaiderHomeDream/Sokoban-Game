@@ -1,11 +1,16 @@
 #include "AllHead.hpp"
 #include "SetMap.hpp"
+#include "Map_One.hpp"
+#include "Map_Tow.hpp"
 
 // Set Window Position
 extern void WindowPosition();
 
-// Go
-extern void Move();
+// Level
+extern void GenerateLevel();
+
+// Set home page
+extern void HomePage();
 
 int main()
 {
@@ -21,15 +26,17 @@ int main()
 	// Set Window size
     initgraph(47*14, 47*16);
 
+	// Set home page
+	HomePage();
+
 	// Run game in while()
 	while (true)
 	{
 		// Set map
 		LoadResource();
-		DrawMap();
 
-		// Go
-		Move();
+		// Level
+		GenerateLevel();
 	}
 
 	char ch = _getch();
