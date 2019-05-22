@@ -15,6 +15,9 @@ int quit = 0;
 // ContinueGameR
 extern void ContinueGameR();
 
+// newGameR
+extern void newGameR();
+
 void HomePageKeys()
 {
 	int count = 0;
@@ -96,12 +99,15 @@ void HomePageKeys()
 		// new game
 		if (count == 1)
 		{
+			// newGameR
+			newGameR();
 			break;
 		}
 
 		// continue game
 		if (count == 2)
 		{
+			// ContinueGameR
 			ContinueGameR();
 			break;
 		}

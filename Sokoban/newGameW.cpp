@@ -2,10 +2,10 @@
 
 extern int map[All_LEVEL][16][14];
 
-void ContinueGameW()
+void newGameW()
 {
-	FILE *fp;
-	if ((fp = fopen( "continueGame.txt", "w+")) == NULL)
+	FILE* fp;
+	if ((fp = fopen("newGame.txt", "w+")) == NULL)
 	{
 		printf("Open file errer!\n");
 		exit(0);

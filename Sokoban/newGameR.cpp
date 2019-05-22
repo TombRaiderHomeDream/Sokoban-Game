@@ -2,10 +2,10 @@
 
 extern int map[All_LEVEL][16][14];
 
-void ContinueGameW()
+void newGameR()
 {
-	FILE *fp;
-	if ((fp = fopen( "continueGame.txt", "w+")) == NULL)
+	FILE* fp;
+	if ((fp = fopen("newGame.txt", "r")) == NULL)
 	{
 		printf("Open file errer!\n");
 		exit(0);
@@ -17,14 +17,9 @@ void ContinueGameW()
 		{
 			for (int j = 0; j < 14; j++)
 			{
-				fprintf(fp, "%d ", map[k][i][j]);
-				if (j == 13)
-				{
-					fprintf(fp, "%c", '\n');
-				}
+				fscanf_s(fp, "%d", &map[k][i][j]);
 			}
 		}
-		fprintf(fp, "%c", '\n');
 	}
 
 	fclose(fp);

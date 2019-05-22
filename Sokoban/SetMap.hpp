@@ -58,6 +58,8 @@ int map[All_LEVEL][16][14] =
 	}
 };
 
+
+
 // Load resources
 void LoadResource()
 {

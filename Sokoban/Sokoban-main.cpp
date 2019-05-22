@@ -21,8 +21,8 @@ extern void HomePageKeys();
 // ContinueGameW
 extern void ContinueGameW();
 
-// ContinueGameR
-extern void ContinueGameR();
+// newGameW
+extern void newGameW();
 
 int main()
 {
@@ -34,6 +34,8 @@ int main()
 
 	// Set Window Position
 	WindowPosition();
+
+	newGameW();
 	
 	// Set Window size
     initgraph(47*14, 47*16);
