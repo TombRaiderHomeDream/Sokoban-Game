@@ -9,7 +9,10 @@ IMAGE selecte, selecteY;
 int x = 173;
 int y = 420;
 
-void HomePageKeys()
+// ContinueGameR
+extern void ContinueGameR();
+
+int HomePageKeys()
 {
 	int count = 0;
 
@@ -87,8 +90,25 @@ void HomePageKeys()
 			break;
 		}
 
-		if (count)
+		// new game
+		if (count == 1)
+		{
 			break;
-		
+		}
+
+		// continue game
+		if (count == 2)
+		{
+			ContinueGameR();
+			break;
+		}
+
+		if (count == 3)
+		{
+			return 1;
+			break;
+		}
 	}
+
+	return 0;
 }

@@ -3,6 +3,9 @@
 #include "Map_One.hpp"
 #include "Map_Tow.hpp"
 
+// EXIT
+extern int EXIT;
+
 // Set Window Position
 extern void WindowPosition();
 
@@ -10,12 +13,18 @@ extern void WindowPosition();
 extern void GenerateLevel();
 
 // Set home page
-extern void HomePageKeys();
+extern int HomePageKeys();
+
+// ContinueGameW
+extern void ContinueGameW();
+
+// ContinueGameR
+extern void ContinueGameR();
 
 int main()
 {
 	// Set title
-	// SetConsoleTitle("Sokoban");
+	SetConsoleTitle("Sokoban");
 
 	// Set window size
 	// system("mode con cols=26 lines=12");
@@ -27,7 +36,12 @@ int main()
     initgraph(47*14, 47*16);
 
 	// Set home page
-	HomePageKeys();
+	if (HomePageKeys() == 1)
+	{
+		// Close map
+		closegraph();
+		return 0;
+	}
 
 	// Run game in while()
 	while (true)
@@ -37,7 +51,19 @@ int main()
 
 		// Level
 		GenerateLevel();
+
+		// EXIT
+		if (EXIT)
+		{
+			// ContinueGameW
+			ContinueGameW();
+			HomePageKeys();
+			EXIT = 0;
+		}
 	}
+
+	// ContinueGameW
+	ContinueGameW();
 
 	char ch = _getch();
 

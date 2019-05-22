@@ -1,5 +1,8 @@
 #include "AllHead.hpp"
 
+// exit
+int EXIT = 0;
+
 // Now level
 extern int LEVEL;
 
@@ -371,6 +374,11 @@ void Move_One()
 			}
 		}
 
+		break;
+
+	case 27:
+	case 'k':
+		EXIT = 1;
 		break;
 	}
 }
