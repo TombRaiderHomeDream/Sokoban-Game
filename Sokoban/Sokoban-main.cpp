@@ -10,7 +10,7 @@ extern void WindowPosition();
 extern void GenerateLevel();
 
 // Set home page
-extern void HomePage();
+extern void HomePageKeys();
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
     initgraph(47*14, 47*16);
 
 	// Set home page
-	HomePage();
+	HomePageKeys();
 
 	// Run game in while()
 	while (true)
