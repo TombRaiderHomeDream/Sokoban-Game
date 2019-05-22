@@ -9,10 +9,13 @@ IMAGE selecte, selecteY;
 int x = 173;
 int y = 420;
 
+// quit
+int quit = 0;
+
 // ContinueGameR
 extern void ContinueGameR();
 
-int HomePageKeys()
+void HomePageKeys()
 {
 	int count = 0;
 
@@ -105,10 +108,8 @@ int HomePageKeys()
 
 		if (count == 3)
 		{
-			return 1;
+			quit = 1;
 			break;
 		}
 	}
-
-	return 0;
 }

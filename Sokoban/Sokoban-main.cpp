@@ -6,6 +6,9 @@
 // EXIT
 extern int EXIT;
 
+// quit
+extern int quit;
+
 // Set Window Position
 extern void WindowPosition();
 
@@ -13,7 +16,7 @@ extern void WindowPosition();
 extern void GenerateLevel();
 
 // Set home page
-extern int HomePageKeys();
+extern void HomePageKeys();
 
 // ContinueGameW
 extern void ContinueGameW();
@@ -36,7 +39,10 @@ int main()
     initgraph(47*14, 47*16);
 
 	// Set home page
-	if (HomePageKeys() == 1)
+	HomePageKeys();
+
+	// quit
+	if (quit)
 	{
 		// Close map
 		closegraph();
@@ -58,6 +64,13 @@ int main()
 			// ContinueGameW
 			ContinueGameW();
 			HomePageKeys();
+			// quit
+			if (quit)
+			{
+				// Close map
+				closegraph();
+				return 0;
+			}
 			EXIT = 0;
 		}
 	}
